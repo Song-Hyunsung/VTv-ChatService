@@ -15,7 +15,13 @@ public class ChatController {
     @MessageMapping("/chat.sendMessage")
     @SendTo("/topic/public")
     public ChatMessage sendMessage(@Payload ChatMessage chatMessage){
-        return chatMessage;
+        if(chatMessage.getType() == ChatMessage.MessageType.CHAT){
+            return chatMessage;
+        } else {
+            ChatMessage errorMessage = new ChatMessage();
+            errorMessage.setContent("WRONG MESSAGE TYPE");
+            return errorMessage;
+        }
     }
 
     // Message with destination /app/chat.addUser will be routed here
