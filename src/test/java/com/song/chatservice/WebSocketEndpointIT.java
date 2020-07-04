@@ -1,6 +1,6 @@
 package com.song.chatservice;
 
-import com.song.chatservice.model.ChatMessage;
+import com.song.chatservice.collection.ChatMessage;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,6 +1,11 @@
-package com.song.chatservice.model;
+package com.song.chatservice.collection;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 public class ChatMessage {
+    @Id
+    private String id;
     private MessageType type;
     private String content;
     private String sender;

@@ -1,6 +1,6 @@
 package com.song.chatservice.controller;
 
-import com.song.chatservice.model.ChatMessage;
+import com.song.chatservice.collection.ChatMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
