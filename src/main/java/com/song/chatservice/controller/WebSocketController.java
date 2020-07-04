@@ -8,7 +8,7 @@ import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class ChatController {
+public class WebSocketController {
     // From Websocket Configuration, we stated that clients with destination "/app" is routed message-handling methods
     // Message with destination /app/chat.sendMessage will be routed here
     @MessageMapping("/chat.sendMessage")
