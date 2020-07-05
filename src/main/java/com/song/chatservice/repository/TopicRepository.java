@@ -1,6 +1,5 @@
 package com.song.chatservice.repository;
 
-import com.song.chatservice.collection.ChatMessage;
 import com.song.chatservice.collection.Topic;
 import org.springframework.data.mongodb.repository.MongoRepository;
 

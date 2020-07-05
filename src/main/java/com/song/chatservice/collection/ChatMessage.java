@@ -1,11 +1,11 @@
 package com.song.chatservice.collection;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 public class ChatMessage {
     @Id
-    private String id;
+    private ObjectId id;
     private MessageType type;
     private String content;
     private String sender;
@@ -15,6 +15,14 @@ public class ChatMessage {
         CHAT,
         JOIN,
         LEAVE
+    }
+
+    public ObjectId getId() {
+        return id;
+    }
+
+    public void setId(ObjectId id) {
+        this.id = id;
     }
 
     public MessageType getType() {

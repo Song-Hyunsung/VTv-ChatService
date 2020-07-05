@@ -1,8 +1,8 @@
 package com.song.chatservice.repository;
 
-import com.mongodb.client.result.UpdateResult;
 import com.song.chatservice.collection.ChatMessage;
 import com.song.chatservice.collection.Topic;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -21,6 +21,8 @@ public class ChatRepositoryImpl implements ChatRepository {
     public void addChatMessage(String topicName, ChatMessage message) {
         Query query = new Query();
         query.addCriteria(Criteria.where("topicName").is(topicName));
+
+        message.setId(new ObjectId());
 
         Update update = new Update();
         update.push("chatMessages", message);
