@@ -10,7 +10,6 @@ public class Topic {
     @Id
     private String id;
     private String topicName;
-    private List<ChatMessage> chatMessages;
 
     public String getId() {
         return id;
@@ -26,13 +25,5 @@ public class Topic {
 
     public void setTopicName(String topicName) {
         this.topicName = topicName;
-    }
-
-    public List<ChatMessage> getChatMessages() {
-        return chatMessages;
-    }
-
-    public void setChatMessages(List<ChatMessage> chatMessages) {
-        this.chatMessages = chatMessages;
     }
 }

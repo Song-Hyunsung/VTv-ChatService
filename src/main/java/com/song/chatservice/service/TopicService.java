@@ -1,20 +1,17 @@
 package com.song.chatservice.service;
 
-import com.song.chatservice.collection.ChatMessage;
 import com.song.chatservice.collection.Topic;
-import com.song.chatservice.repository.ChatRepository;
 import com.song.chatservice.repository.TopicRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TopicService {
-    private ChatRepository chatRepository;
     private TopicRepository topicRepository;
 
-    public TopicService(ChatRepository chatRepository, TopicRepository topicRepository){
-        this.chatRepository = chatRepository;
+    public TopicService(TopicRepository topicRepository){
         this.topicRepository = topicRepository;
     }
 
@@ -22,11 +19,11 @@ public class TopicService {
         return this.topicRepository.findAll();
     }
 
-    public Topic addNewTopic(Topic topic){
-        return this.topicRepository.save(topic);
+    public Optional<Topic> findByTopicName(String topicName){
+        return this.topicRepository.findByTopicName(topicName);
     }
 
-    public void addChatMessage(String topicName, ChatMessage message){
-        this.chatRepository.addChatMessage(topicName, message);
+    public Topic addNewTopic(Topic topic){
+        return this.topicRepository.save(topic);
     }
 }
